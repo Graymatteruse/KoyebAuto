@@ -39,7 +39,7 @@ async def index_files(bot, query):
     await msg.edit(
         "Starting Indexing",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
+            [[InlineKeyboardButton('❌ Cancel ❌', callback_data='index_cancel')]]
         )
     )
     try:
@@ -68,7 +68,7 @@ async def send_for_index(bot, message):
     try:
         await bot.get_chat(chat_id)
     except ChannelInvalid:
-        return await message.reply('This may be a private channel / group. Make me an admin over there to index the files.')
+        return await message.reply('📮This Channel Is Private, Make Me Admin In The Channel To Index The Files.')
     except (UsernameInvalid, UsernameNotModified):
         return await message.reply('Invalid Link specified.')
     except Exception as e:
@@ -105,11 +105,11 @@ async def send_for_index(bot, message):
         link = f"@{message.forward_from_chat.username}"
     buttons = [
         [
-            InlineKeyboardButton('Accept Index',
+            InlineKeyboardButton('✅ Accept Index',
                                  callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}')
         ],
         [
-            InlineKeyboardButton('Reject Index',
+            InlineKeyboardButton('❌ Reject Index',
                                  callback_data=f'index#reject#{chat_id}#{message.id}#{message.from_user.id}'),
         ]
     ]
@@ -182,4 +182,4 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
             logger.exception(e)
             await msg.edit(f'Error: {e}')
         else:
-            await msg.edit(f'Succesfully saved <code>{total_files}</code> to dataBase!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>')
+            await msg.edit(f'✅ Succesfully saved <code>{total_files}</code> to dataBase!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nNon-Media messages skipped: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>')
