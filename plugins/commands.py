@@ -23,10 +23,10 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('📣 Updates', url='https://t.me/FHDmovies24x7Official')
+                InlineKeyboardButton('📣 Updates', url='https://telegram.me/FHDmovies24x7Official')
             ],
             [
-                InlineKeyboardButton('🚩 Group', url=f"https://t.me/FHDmovies24x7"),
+                InlineKeyboardButton('🚩 Group', url=f"https://telegram.me/FHDmovies24x7"),
             ],
             [
                 InlineKeyboardButton(text=DOWNLOAD_TEXT_NAME,url=DOWNLOAD_TEXT_URL)
@@ -45,10 +45,10 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🚩 Group', url='https://t.me/FHDmovies24x7'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/FDmovies24x7Official')
+            InlineKeyboardButton('🚩 Group', url='https://telegram.me/FHDmovies24x7'),
+            InlineKeyboardButton('📣 Updates', url='https://telegram.me/FDmovies24x7Official')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('💎 GET VIP', callback_data='about')
@@ -94,7 +94,7 @@ async def start(client, message):
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('🚩 Group', url='https://telegram.me/FHDmovies24x7'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/FHDmovies24x7Official')
+            InlineKeyboardButton('📣 Updates', url='https://telegram.me/FHDmovies24x7Official')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('💎 GET VIP', callback_data='about')
