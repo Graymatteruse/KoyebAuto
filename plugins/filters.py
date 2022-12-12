@@ -110,7 +110,7 @@ async def addfilter(client, message):
     await add_filter(grp_id, text, reply_text, btn, fileid, alert)
 
     await message.reply_text(
-        f"Filter for  `{text}`  added in  **{title}**",
+        f"🆕 Filter `{text}`  added in  **{title}**❗",
         quote=True,
         parse_mode=enums.ParseMode.MARKDOWN
     )
